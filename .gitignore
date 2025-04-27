@@ -1,0 +1,27 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Visual Studio Code
+.vscode/
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
+
+# Maven Wrapper logs
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+
+# Sistema operacional (Mac)
+.DS_Store
+
+# Arquivos de log
+*.log
+
+# Arquivos auxiliares do Spring Boot
+HELP.md
+/src/main/resources/application.properties

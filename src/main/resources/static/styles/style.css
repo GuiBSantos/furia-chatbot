@@ -1,0 +1,214 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Prompt', sans-serif;
+  color: #fff;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #0d0d0d);
+  background-size: 400% 400%;
+  animation: animatedBG 10s ease infinite;
+  overflow-x: hidden;
+}
+
+.furia-header {
+  background-color: #0a0a0a;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.furia-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.logo-furia-header {
+  width: 50px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.furia-title {
+  font-weight: 900;
+  font-size: 2rem;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 2px;
+  animation: fadeInSlide 1s ease forwards;
+}
+
+
+.chat-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.chat-container {
+  width: 100%;
+  max-width: 600px;
+  min-width: 300px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  overflow: hidden;
+  position: relative;
+  animation: appear 1s ease forwards;
+}
+
+#chat-box {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;     
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.user-message,
+.bot-message {
+  max-width: 75%;
+  margin-bottom: 15px;
+  padding: 10px 16px;
+  border-radius: 18px;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+  transition: all 0.3s ease;
+  animation: fadeInSlide 0.5s ease forwards;
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: #00ffcc;
+  color: #000;
+}
+
+.bot-message {
+  align-self: flex-start;
+  background-color: #ff66cc;
+  color: #fff;
+}
+
+.user-message:hover,
+.bot-message:hover {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+
+.input-area {
+  display: flex;
+  margin-top: 15px;
+  gap: 8px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  background: #2a2a2a;
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+.input-area input:focus {
+  outline: none;
+  border: 1px solid #ff66cc;
+  box-shadow: 0 0 8px #ff66cc99;
+}
+
+.input-area button {
+  padding: 10px 16px;
+  border: none;
+  background: #000;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.input-area button:hover {
+  background: #e6005c;
+  box-shadow: 0 0 12px #ff66ccaa;
+  transform: scale(1.08);
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 16px 0;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.typing-indicator {
+  width: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: flex-start;
+  padding: 10px;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  background-color: #ff66cc;
+  border-radius: 50%;
+  animation: blink 1.4s infinite both;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes animatedBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInSlide {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0; transform: scale(0.8); }
+  40% { opacity: 1; transform: scale(1.2); }
+}
+
+@media (max-width: 768px) {
+  .chat-container {
+    width: 90%;
+  }
+  .furia-title {
+    font-size: 1.5rem;
+  }
+}
