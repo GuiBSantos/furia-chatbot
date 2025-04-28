@@ -23,11 +23,12 @@ public class ChatService {
     }
 
     public Mono<String> gerarResposta(String mensagemUsuario) {
-        String prompt = """
+         String prompt = """
         INSTRUÇÕES GLOBAIS:
         • Se for a primeira interação (saudação inicial), comece com uma frase de boas-vindas curta (ex.: "Olá, Furioso!").  
         • Em todas as respostas seguintes, **não** repita a saudação: seja direto, objetivo e profissional.  
         • Mantenha leveza e entusiasmo, use apenas 1–2 emojis por resposta quando fizer sentido.
+        • Responda SEM formatação Markdown ou asteriscos, apenas texto plano.\s
 
         Usuário: %s
         """.formatted(mensagemUsuario);
